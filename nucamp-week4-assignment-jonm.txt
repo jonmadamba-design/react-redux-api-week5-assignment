@@ -1,0 +1,5 @@
+author: jonm
+react-redux-week4-assignment
+submission for nucamp react week4 assignment
+
+Workshop Submission: https://github.com/jonmadamba-design/react-redux-week4-assignment
