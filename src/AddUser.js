@@ -6,6 +6,7 @@ import React, { Component } from "react";
 // 8. update export below to connect to store
 import { addUser } from './actions/UserActions';
 import {connect} from 'react-redux';
+import { createUser } from './actions/UserActions';
 
 export class AddUser extends Component {
   constructor(props) {
@@ -31,9 +32,10 @@ export class AddUser extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addUser({ //changed this line to use new addUser, from add (passed as prop function from App.js parent)
-      name: this.state.userName,
-      id: this.state.id,
+    // this.props.addUser({ //changed this line to use new addUser, from add (passed as prop function from App.js parent)
+    this.props.createUser({ //changed this line to use new addUser, from add (passed as prop function from App.js parent)
+        first_name: this.state.userName,
+        id: +this.state.id,
     });
 
     this.setState({
@@ -44,36 +46,44 @@ export class AddUser extends Component {
 
 // we are keeping component level state to work with redux state; keep ^^^
 
+  componentDidMount(){
+    this.props.createUser();
+  }
+
   render() {
     return (
-      <form className="container my-5" onSubmit={this.handleSubmit.bind(this)}>
-        <div className="form-group">
-          <label htmlFor="userName">User name</label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="user name"
-            name="userName"
-            value={this.state.userName}
-            onChange={this.handleChange.bind(this)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="id">ID</label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="id"
-            name="id"
-            value={this.state.id}
-            onChange={this.handleChange.bind(this)}
-          />
-        </div>
+      <div>
+        <br></br>
+        <h2>Add User</h2>
+        <form className="container my-5" onSubmit={this.handleSubmit.bind(this)}>
+          <div className="form-group">
+            <label htmlFor="userName">User name</label>
+            <input
+              type="text"
+              className="form-control"
+              aria-describedby="user name"
+              name="userName"
+              value={this.state.userName}
+              onChange={this.handleChange.bind(this)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="id">ID</label>
+            <input
+              type="text"
+              className="form-control"
+              aria-describedby="id"
+              name="id"
+              value={this.state.id}
+              onChange={this.handleChange.bind(this)}
+            />
+          </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
     );
   }
 }
@@ -81,4 +91,4 @@ export class AddUser extends Component {
 // JM Workflow for AddUser Workshop:
 // 8. update export below to allow AddUser component to coonect to stor and pass in action addUser
 // 9. Go to handler handleSubmit above
-export default connect(null, {addUser})(AddUser);
+export default connect(null, {addUser, createUser})(AddUser);

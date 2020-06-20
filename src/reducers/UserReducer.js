@@ -3,19 +3,22 @@
 // 5. Go to switch case for ADD_USER below
 
 import {DELETE_USER, ADD_USER} from '../actions/ActionTypes';
-
+// jm add fetch users
+import {FETCH_USERS} from '../actions/ActionTypes';
+import {CREATE_USER} from '../actions/ActionTypes';
 
 const initialState = {
-    users: [
-      {
-        name: "Aaron",
-        id: 1,
-      },
-      {
-        name: "Jamie",
-        id: 2,
-      },
-    ],
+    // users: [
+    //   {
+    //     name: "Aaron",
+    //     id: 1,
+    //   },
+    //   {
+    //     name: "Jamie",
+    //     id: 2,
+    //   },
+    // ],
+    users: [],
   };
 
 
@@ -48,6 +51,23 @@ export default function(state=initialState, action) {
                 ...state,
                 users: newUsersArray,
             }
+        case FETCH_USERS:
+            console.log(action);
+            return {
+                ...state,
+                users: action.payload,
+            }
+        case CREATE_USER:
+            console.log("In the CREATE_USER UserReducer");
+            console.log(action); // see payload for action
+              
+        //    let newCreateUsersArray = [...state.users, action.payload.data ]
+
+        //    return {
+        //        ...state,
+        //        users: newCreateUsersArray,
+        //    }
+    
         default:
             return state;
 

@@ -15,7 +15,7 @@ class App extends React.Component {
     
       <Provider store={Store}>
 
-      {/* jm 2 add spring component with props to / from */}
+      {/* jm 2 add spring component with props to and from */}
       <Spring
         from={{ opacity: 0, marginLeft: 200 }}
         to={{ opacity: 1, marginLeft: 0 }}
@@ -24,7 +24,8 @@ class App extends React.Component {
 
                 <div className="App" style={props} >
                   <header className="App-header">
-                    <h1>Form State, Spread Syntax, Ternary Operator</h1>
+                  <h1>React Week 5</h1>
+                  <h1>Spring Animation, Axios API, Netlify</h1>
                   </header>
                 </div>
               
