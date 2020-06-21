@@ -12,6 +12,8 @@ export class Users extends Component {
   }
 
   render() {
+    // console.log("Inside Users->render");
+    // console.log(user);
     let userJsx =
       this.props.reduxUserState && this.props.reduxUserState.length > 0 ? (
         this.props.reduxUserState.map((user) => (

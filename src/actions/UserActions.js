@@ -67,12 +67,12 @@ export function deleteUser(id) {
 // JM Workflow for AddUser Workshop:
 // 3. added addUser action function
 // 4. Go to UserReduction component
-export function addUser(data) {
+export function addUser(userData) {
     console.log("in the userActions addusers");
     return function (dispatch) {
         dispatch({
             type: ADD_USER,
-            payload: {data}
+            payload: {userData}
         });
     };
 } 
@@ -95,10 +95,12 @@ export function createUser(userData) {
                 console.log("end call: createUser");
 
                 //update the local app state
+
                 dispatch({
-                     type: ADD_USER,
-                     payload: {userData},
+                    type: ADD_USER,
+                    payload: {userData}
                 });
+        
         
             }        
             catch (error) {

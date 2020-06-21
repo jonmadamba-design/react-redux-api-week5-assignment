@@ -5,7 +5,7 @@ import React, { Component } from "react";
 // 7. import connect from react-redux to access central state container
 // 8. update export below to connect to store
 import { addUser } from './actions/UserActions';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { createUser } from './actions/UserActions';
 
 export class AddUser extends Component {
@@ -39,9 +39,13 @@ export class AddUser extends Component {
     });
 
     this.setState({
-      userName: "",
+      first_name: "",
       id: "",
     });
+    // this.setState({
+    //   userName: "",
+    //   id: "",
+    // });
   }
 
 // we are keeping component level state to work with redux state; keep ^^^

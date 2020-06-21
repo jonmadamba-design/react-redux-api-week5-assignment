@@ -45,7 +45,7 @@ export default function(state=initialState, action) {
             console.log("In the ADD_USER UserReducer");
             console.log(action); // see payload for action
               
-            let newUsersArray = [...state.users, action.payload.data ]
+            let newUsersArray = [...state.users, action.payload.userData ]
 
             return {
                 ...state,
