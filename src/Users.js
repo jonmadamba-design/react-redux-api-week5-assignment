@@ -6,10 +6,10 @@ import { fetchUsers } from "./actions/UserActions";
 export class Users extends Component {
 
   // jm add for fetch
-  // componentDidMount() {
-  //    console.log("inside Users > compdidmount")
-  //    let testData = this.props.fetchUsers();
-  // }
+  componentDidMount() {
+     console.log("inside Users > compdidmount")
+     this.props.fetchUsers();
+  }
 
   render() {
     // console.log("Inside Users->render");
@@ -44,6 +44,7 @@ export class Users extends Component {
     );
   }
 }
+
 
 const mapStateToProps = (state) => ({
   reduxUserState: state.users.users,

@@ -28,11 +28,7 @@ export default function(state=initialState, action) {
         case DELETE_USER: 
             console.log("In the reducer for DELETE_USER");
 
-            let filteredArray = state.users.filter((user) => {
-                if (user.id !== action.payload) {
-                    return user; //if no match, return current user state
-                }
-            });
+            let filteredArray = state.users.filter((user) => (user.id !== action.payload));
 
             return {
                 ...state,
