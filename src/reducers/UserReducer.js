@@ -61,12 +61,12 @@ export default function(state=initialState, action) {
             console.log("In the CREATE_USER UserReducer");
             console.log(action); // see payload for action
               
-        //    let newCreateUsersArray = [...state.users, action.payload.data ]
+           let newCreateUsersArray = [...state.users, action.payload.userData ]
 
-        //    return {
-        //        ...state,
-        //        users: newCreateUsersArray,
-        //    }
+           return {
+               ...state,
+               users: newCreateUsersArray,
+           }
     
         default:
             return state;
