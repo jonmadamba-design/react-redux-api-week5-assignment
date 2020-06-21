@@ -41,7 +41,7 @@ export class AddUser extends Component {
     });
 
     this.setState({
-      first_name: "",
+      userName: "",
       id: "",
     });
     // this.setState({
