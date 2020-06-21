@@ -97,7 +97,7 @@ export function createUser(userData) {
                 //update the local app state
 
                 dispatch({
-                    type: ADD_USER,
+                    type: CREATE_USER,
                     payload: {userData}
                 });
         
