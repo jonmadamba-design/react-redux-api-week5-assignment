@@ -6,10 +6,10 @@ import { fetchUsers } from "./actions/UserActions";
 export class Users extends Component {
 
   // jm add for fetch
-  componentDidMount() {
-     console.log("inside Users > compdidmount")
-     let testData = this.props.fetchUsers();
-  }
+  // componentDidMount() {
+  //    console.log("inside Users > compdidmount")
+  //    let testData = this.props.fetchUsers();
+  // }
 
   render() {
     // console.log("Inside Users->render");
@@ -18,7 +18,7 @@ export class Users extends Component {
       this.props.reduxUserState && this.props.reduxUserState.length > 0 ? (
         this.props.reduxUserState.map((user) => (
           <div className="card col-12 col-md-6 p-2" key={user.id}>
-            <img src={user.avatar} />
+            <img src={user.avatar} alt="user image" />
             <h4>{user.first_name} {user.last_name}</h4>
             <p>Email: {user.email}</p>
             <button
