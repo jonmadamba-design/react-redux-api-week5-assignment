@@ -36,6 +36,8 @@ export class AddUser extends Component {
     this.props.createUser({ //changed this line to use new addUser, from add (passed as prop function from App.js parent)
         first_name: this.state.userName,
         id: +this.state.id,
+        email: this.state.userName + ".react@gmail.com",
+        avatar: "https://sm.mashable.com/t/mashable_sea/photo/default/man-fakes-death-cat-q6u_2z9w.960.png",
     });
 
     this.setState({
@@ -50,9 +52,9 @@ export class AddUser extends Component {
 
 // we are keeping component level state to work with redux state; keep ^^^
 
-  componentDidMount(){
-    this.props.createUser();
-  }
+  // componentDidMount(){
+  //   this.props.createUser();
+  // }
 
   render() {
     return (
