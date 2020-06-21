@@ -26,6 +26,7 @@ class App extends React.Component {
                   <header className="App-header">
                   <h1>React Week 5</h1>
                   <h1>Spring Animation, Axios API, Netlify</h1>
+                  <a href="https://github.com/jonmadamba-design/react-redux-api-week5-assignment" target="_blank"><h3 style={{color: 'light-blue'}}>View Github</h3></a>
                   </header>
                 </div>
               
